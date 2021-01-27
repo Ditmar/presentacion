@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/konva@7.2.2/konva.min.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+    <meta charset="utf-8" />
+    <title>Konva Canvas Scrolling Drag Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        #output {
+            font-size: 120%;
+            margin-top: .75em;
+            border: 1px solid grey;
+            padding: .25em;
+            min-height: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output">
+
+    </div>
+
+    <div id="container"></div>
+
+</body>
+<script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    var stage = new Konva.Stage({
+        container: 'container',
+        width: width,
+        height: height,
+        draggable: true,
+    });
+
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    var WIDTH = 1000;
+    var HEIGHT = 1000;
+    var NUMBER = 5;
+
+    function circle(x, y, r) {
+        return new Konva.Circle({
+            x: x,
+            y: y,
+            radius: r,
+            fill: 'red',
+            stroke: 'black',
+        });
+    }
+    var _x = 0;
+    var _y = 0;
+
+    var earth = circle(100, 100, 30);
+    earth.pos = { x: 100, y: 100 };
+    earth.velocity = { x: 0, y: 0 };
+    earth.acelerator = { x: 0, y: 0 };
+    earth.masa = 50;
+    earth.force = { x: 0, y: 0 }
+    var G = 1;
+    var len = 100;
+    var sat_data = new Array();
+    for (var i = 0; i < len; i++) {
+        var randomparam = Math.random() * 10 + 5;
+        var sat = circle(200, 200, randomparam);
+        sat.force = { x: 0, y: 0 };
+        sat.masa = randomparam / 10;
+        sat.acelerator = { x: 0, y: 0 };
+        sat.velocity = { x: randomparam, y: randomparam / 2 };
+        sat.pos = { x: 2, y: 2 };
+        layer.add(sat);
+        sat_data.push(sat);
+    }
+    /*
+    InitVars
+    */
+    earth
+    layer.add(earth);
+
+    var animation = new Konva.Animation((frame) => {
+        loop(frame);
+        layer.draw();
+    });
+    var eucationhtml = document.getElementById("ecuation");
+
+    animation.start();
+    var count = 0;
+    function convert(mathlatex) {
+        //
+        //  Get the TeX input
+        //
+        var input = mathlatex.trim();
+        var ouput = document.getElementById("output");
+        ouput.innerHTML = input;
+        MathJax.typeset(["#output"]);
+    }
+    //convert(`F = G*\\frac{m_{1}*m_{2}}{r}*\\bar{r}`);
+    function distance(point1, point2) {
+        return Math.sqrt(Math.pow((point1.x - point2.x), 2) + Math.pow((point1.y - point2.y), 2));
+    }
+    function substracVector(point1, point2) {
+        return { x: point1.x - point2.x, y: point1.y - point2.y };
+    }
+    function normalizeScale(point) {
+        return { x: point.x / 100, y: point.y / 100 };
+    }
+    function loop(frame) {
+        //calculamos las posiciones
+        for (var i = 0; i < len; i++) {
+            var sat = sat_data[i];
+            var vectordata = substracVector(sat.pos, earth.pos);
+            sat.force.x = -G * ((sat.masa * earth.masa) / (Math.pow(distance(sat.pos, earth.pos), 2))) * vectordata.x
+            sat.force.y = -G * ((sat.masa * earth.masa) / (Math.pow(distance(sat.pos, earth.pos), 2))) * vectordata.y
+
+            sat.acelerator.x = sat.force.x / sat.masa;
+            sat.acelerator.y = sat.force.y / sat.masa;
+            sat.velocity.x += sat.acelerator.x;
+            sat.velocity.y += sat.acelerator.y;
+            sat.pos.x += sat.velocity.x;
+            sat.pos.y += sat.velocity.y;
+            sat.position({ x: sat.pos.x, y: sat.pos.y })
+        }
+
+
+        /*earth.force.x = -G * ((sat.masa * earth.masa) / (Math.pow(distance(sat.pos, earth.pos), 2))) * vectordata.x
+        earth.force.y = -G * ((sat.masa * earth.masa) / (Math.pow(distance(sat.pos, earth.pos), 2))) * vectordata.y
+        earth.acelerator.x = earth.force.x / earth.masa;
+        earth.acelerator.y = earth.force.y / earth.masa;
+        earth.velocity.x += earth.acelerator.x;
+        earth.velocity.y += earth.acelerator.y;
+        earth.pos.x += earth.velocity.x;
+        earth.pos.y += earth.velocity.y;
+        earth.position({ x: earth.pos.x, y: earth.pos.y })*/
+
+    }
+</script>
+
+</html>

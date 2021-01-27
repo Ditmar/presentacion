@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>reveal.js – The HTML Presentation Framework</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			},
+			svg: {
+				fontCache: 'global'
+			}
+		};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<img src="./img/uatf.png" alt="">
+				<h4>Aplicación web basado en la metodología de dinámica de sistemas para optimizar el tiempo del diseño
+					de enlaces satelitales en orbita geoestacionaria para la A.B.E. </h4>
+				<p>
+					<small>Autor <a href="http://hakim.se">Ditmar Castro</a></small>
+				</p>
+			</section>
+
+			<section>
+
+				<section>
+					<h2>
+						Introducción
+					</h2>
+				</section>
+				<section>
+					<img src="./img/marconi.jpg" alt="">
+					<p>En 1901 consiguió la primera comunicación radio telegrafía transatlántica </p>
+					<br>
+				</section>
+				<section>
+					<img src="./img/curvatura.jpeg" alt="" width="600">
+					<p>Un límite físico</p>
+					<br>
+				</section>
+				<section>
+					<img src="./img/sputnik1.jpg" alt="">
+					<p>Históricamente el 4 de octubre de 1957 Rusia puso con éxito el primer satélite artificial activo
+						llamado Sputnik 1</p>
+					<br>
+				</section>
+				<section>
+					<img src="./img/tksat.jpg" alt="">
+					<p>Bolivia adquirió en el 2013 el TKSAT-1 (Túpac Katari) </p>
+					<br>
+				</section>
+				<section>
+					<img src="./img/link.gif" alt="">
+					<p>Cálculo de enlace</p>
+					<br>
+				</section>
+				<section>
+					<ul>
+						<li>
+							backoff del satelite
+
+
+						</li>
+						<li>
+							Backof de subida
+
+						</li>
+						<li>
+							factor R
+
+						</li>
+						<li>
+
+							Frecuencia de bajda
+
+						</li>
+						<li>
+							Frecuencia de subida
+
+						</li>
+						<li>
+							Ganancia de bajda
+
+						</li>
+						<li>
+							Ganancia de subida
+
+						</li>
+						<li>
+							Ganancia de la antena del satelite
+
+						</li>
+						<li>
+							Latitud estacion terrena
+							Longitud estación terrena
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>
+							lngdown: this.longitud2,
+
+
+
+						</li>
+						<li>
+							lngdown: this.longitud2,
+
+
+						</li>
+						<li>
+							lngup: this.longitudup,
+
+
+						</li>
+						<li>
+
+							longitud: Number(this.longitud),
+
+
+						</li>
+						<li>
+							noisetemp1: this.k1,
+
+
+						</li>
+						<li>
+							noisetemp2: this.k2,
+
+
+						</li>
+						<li>
+							perdidas: this.perdidasat,
+
+
+						</li>
+						<li>
+							perdidasdown: this.perdidas_entre_amplicador_antenadown,
+
+
+						</li>
+						<li>
+							perdidasup: this.perdidas_entre_amplicador_antena,
+
+						</li>
+					</ul>
+				</section>
+				<section>
+					<li>
+						potenciadown: this.potencia_amplificadordown,
+
+					</li>
+					<li>
+						potenciasat: this.potencia_amplificadorsat,
+
+					</li>
+					<li>
+						potenciaup: this.potencia_amplificadorup,
+
+					</li>
+					<li>
+						raindown: this.raindown,
+
+					</li>
+					<li>
+						rainup: this.rainup,
+
+					</li>
+					<li>
+						ta1: this.ta1,
+						ta2: this.ta2,
+						cni: this.cni
+					</li>
+				</section>
+				<section>
+					<li>
+						<img src="./img/varaibles.png" alt="">
+					</li>
+					<li>
+						<img src="./img/varaibles2.png" alt="">
+					</li>
+				</section>
+			</section>
+
+			<!-- Example of nested vertical slides -->
+			<section>
+				<section>
+					<h2>Problema</h2>
+					<p>
+						¿En que medida puede optimizar el tiempo una Aplicación web basado en la metodología de dinámica
+						de sistemas el diseño de enlaces satelitales para la Agencia Boliviana Espacial?
+					</p>
+				</section>
+				<section>
+					<h2>Objetivo</h2>
+					<p>Desarrollar un Aplicación web basado en la metodología de dinámica de sistemas para optimizar el
+						tiempo del diseño de enlaces satelitales para la Agencia Boliviana Espacial.
+					</p>
+				</section>
+				<section>
+					<h2>Objetivos específicos 1</h2>
+					<p>1.) Sistematizar los fundamentos teóricos del desarrollo de Aplicación web, metodología de
+						dinámica
+						de sistemas y el diseño de enlaces satelitales.</p>
+
+				</section>
+				<section>
+					<h2>Objetivos Especifico 2</h2>
+					<p>2.) Diagnosticar el diseño de enlaces satelitales para la Agencia Boliviana Espacial.</p>
+
+				</section>
+				<section>
+					<h2>
+						Objetivos Especifico 3
+					</h2>
+					<p> 3.)
+						Diseñar los módulos necesarios del Aplicación web basado en la metodología de dinámica de
+						sistemas. para optimizar el tiempo del diseño de enlaces satelitales para la Agencia Boliviana
+						Espacial.
+					</p>
+				</section>
+				<section>
+					<h2>
+						Objetivos Especifico 4
+					</h2>
+					<p>
+						4.) Realizar prácticas de simulación para la validación de resultados.
+					</p>
+				</section>
+				<section>
+					<h2>
+						Hipotesis
+					</h2>
+					<p>
+						Desarrollar una Aplicación web basado en la metodología de dinámica de sistemas optimiza el
+						tiempo del diseño de enlaces satelitales para la Agencia Boliviana Espacial.
+					</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>2. MARCO TEÓRICO</h2>
+					<ul>
+						<li>
+							Dinámica de Sistemas
+						</li>
+						<li>
+							Mecánica Orbital
+						</li>
+						<li>
+							Calculos de Enlace
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4>
+						Dinámica de Sistemas
+					</h4>
+					<p>
+
+						La dinámica de sistemas es una metodología que es útil para construir modelos de simulación que
+						han
+						de permitir decidir cuál de varias propuestas es más eficaz para solucionar el problema
+						planteado,
+						puede responder con facilidad a la pregunta del que pasaría sí y así poder evaluar diversos
+						escenarios de simulación
+
+					</p>
+				</section>
+				<section>
+					<h2>
+						Ejemplo 1
+					</h2>
+					<a href="Example">Ver Ejemplo</a>
+				</section>
+				<section>
+					<h2>
+						Ejemplo 2
+					</h2>
+					<a href="Example">Ver Ejemplo</a>
+				</section>
+				<section>
+					<h2>
+						Mecánica Orbital
+					</h2>
+					<ul>
+						<li>
+							Las leyes de Kepler
+						</li>
+						<li>
+							La ley de la fuerza gravitacional de newton.
+						</li>
+						<li>
+							Elementos Orbitales
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>
+						Las leyes de Kepler
+					</h2>
+					<img src="./img/kepler.png" alt="">
+					<ul>
+						<li>
+							<h4>Primera ley de kepler</h4>
+							La excentricidad es el grado de desviación de una sección cónica respecto a una
+							circunferencia, se tiene para el semieje mayor α y el semieje menor β se define la
+							excentricidad como
+						</li>
+					</ul>
+				</section>
+				<section>
+					$ e = \frac{\sqrt{\alpha^{2} + \beta^2}}{\alpha} $
+				</section>
+				<section>
+					<h4>
+						Segunda ley de kepler
+					</h4>
+					<p>
+						La segunda ley de Kepler, también conocida como ley de las áreas, y establece que para
+						intervalos iguales de tiempo, un satélite barre áreas iguales en el plano de su órbita, con foco
+						en el baricentro, para un satélite que recorre las distancias D1 y D2 metros en 1 segundo, las
+						áreas A1 y A2 son iguales. Debido a la ley de áreas iguales, la distancia D1 debe ser mayor que
+						D2 y, en consecuencia, la velocidad V1 debe ser mayor que la velocidad V2. La velocidad es
+						máxima en el punto de máxima aproximación a la Tierra (llamado perigeo), y la velocidad es
+						mínima en el punto más alejado de la Tierra llamado apogeo
+					</p>
+				</section>
+				<section data-background-video="./video/kepler1.mp4" data-background-color="#000000">
+
+				</section>
+				<section>
+					<h4>
+						Tercera ley
+					</h4>
+					<p>
+						Se llama a veces la ley armónica. Establece que el cuadrado del periodo (el tiempo en recorrer
+						la órbita) es proporcional al cubo de la distancia promedio entre el primario y el satélite,
+						Esta distancia promedio es igual al semieje mayor; por lo anterior, se puede enunciar
+						matemáticamente la tercera ley de Kepler como sigue
+					</p>
+				</section>
+				<section data-background-video="./video/kepler3.mp4" data-background-color="#000000">
+
+				</section>
+				<section>
+					$ C = \frac{AP^{2}}{\alpha ^ 3} $
+				</section>
+
+				<section data-background="#fff">
+					<h4>
+						La ley de la fuerza gravitacional de newton.
+					</h4>
+					$ F = G * (\frac{m_{1} * m_{2}}{r^2}) * \vec{r} $
+					<br>
+					<img src="./img/gravedad.png" alt="">
+					<ul>
+						<li>
+							<a href="./gravity1.html">Demostración 1</a>
+
+						</li>
+						<li>
+							<a href="./gravity2.html">Demostración 2</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4>
+						Elementos Orbitales
+					</h4>
+					<img src="./img/elementos.png" alt="">
+				</section>
+				<section>
+					<h4>
+						2.5.11 Elementos Orbitales en formato “TLE” norad
+					</h4>
+					<p>
+						El formato denominado TLE (Two-Line Element set) de NORAD (North American
+						Aerospace Defence Command) será el empleado para obtener los elementos orbitales medios que
+						servirán como punto de partida para los propagadores de orbita sgp4.
+						<img src="./img/norad2.png" alt="">
+					</p>
+				</section>
+				<section>
+					<h4>
+						Ejemplo
+					</h4>
+					<img src="./img/norad.png" alt="">
+					<p>
+						La linea L2, puede estar sujeto a cambios, en base a observaciones satelitales.
+					</p>
+				</section>
+				<section>
+					<h4>
+						Propagador de Orbita SGP4
+					</h4>
+					<img src="./img/sgp4.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Tipos de Orbitas
+					</h4>
+					<img src="./img/tipos_de_orbitas.png" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Calculo de Enlace
+					</h4>
+					<img src="./img/modelo.jpg" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Calculo de enlace
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<img src="./img/elevacion.png" alt="">
+								<p>Angulo de Elevación</p>
+							</td>
+							<td>
+								<img src="./img/azimut.png" alt="">
+								<p>
+									Ángulo Azimut
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="./img/distancia.png" alt="">
+
+							</td>
+							<td>
+								<p>
+									Distancia entre la estación terrena y el satelite
+								</p>
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Atenuación Por absorción atmosférica
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<img src="./img/atenuacion.png" alt="">
+							</td>
+							<td>
+								<p>$[L_{a.a}]_{dB}= [L_{cenit}]_{dB} * cosec(\theta )$</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="./img/tabla.png" alt="">
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Atenuación Por lluvia, Modelo de Crane
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<img src="./img/lluvia.png" alt="">
+							</td>
+							<td>
+								<img src="./img/lluvia2.png" alt="">
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Atenuación Por lluvia, Modelo de Crane
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<img src="./img/tabla2.png" alt="">
+							</td>
+							<td>
+								<img src="./img/ecuacion.png" alt="">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="./img/ecuacion1.png" alt="">
+							</td>
+							<td>
+
+							</td>
+						</tr>
+					</table>
+
+				</section>
+				<section data-background="#dddddd">
+					<table>
+						<tr>
+							<td>
+								<img src="./img/ecuacion3.png" alt="">
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						PIRE
+					</h4>
+					<p>
+						$ PIRE=Pt Gt [W] $
+					</p>
+					<p>
+						$ [PIRE]_dBW=10 log⁡(P_t )+[G_t ]_dbi [dBW] $
+					</p>
+				</section>
+				<section data-background-video="./video/PIRE.mp4" data-background="#dddddd">
+
+				</section>´
+				<section data-background="#dddddd">
+					<table>
+						<tr>
+							<td>
+								Perdida en los conectores
+							</td>
+							<td>
+								Ruido térmico
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Factor o figura de ruido
+							</td>
+							<td>
+								Factor de calidad y figura de mérito
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Relación total de Potencias.
+							</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+
+
+			<section data-auto-animate>
+				<section>
+					<h2 data-id="code-title">Marco métodologico</h2>
+				</section>
+				<section>
+					<h4>
+						Alcancé de la investigación
+					</h4>
+					<p>
+						El proyecto de investigación tiene un alcance exploratorio, ya que se propone la creación de una
+						aplicación web desarrollada desde la perspectiva de la dinámica de sistemas, para el calculo de
+						enlace satelital hacia estaciones terrenas.
+					</p>
+				</section>
+				<section>
+					<h4>
+						3.1.2.4 Diseño de la investigación
+					</h4>
+					<p>
+						Se aplicará un diseño de investigación <b>cuasi experimental</b> donde se evaluará el software
+						en una
+						población definida no aleatoria, con el grupo experimental se propondrá diferentes escenarios y
+						problemas específicos sobre enlaces satelitales, que deberán ser resueltos con la herramienta,
+						dando como resultado los informes generados, de dicha población seleccionada.
+					</p>
+				</section>
+				<section>
+					<h4>
+						Población y muestra
+					</h4>
+					<p>
+						La población selecciona son 20 estudiantes, y 3 profesionales del área de sistemas e
+						informática, más 2 ingenieros de la ABE.
+					</p>
+				</section>
+				<section>
+					<h4>
+						3.1.3.1 Variable dependiente
+					</h4>
+					<p>
+						Diseño de enlaces satelitales en orbita geoestacionaria para la Agencia Boliviana Espacial.
+					</p>
+				</section>
+				<section>
+					<h4>
+						Variable Dependiente
+					</h4>
+					<p>
+						Diseño de enlaces satelitales en orbita geoestacionaria para la Agencia Boliviana espacial
+					</p>
+				</section>
+				<section>
+					<h4>
+						Operazionalización de variables
+					</h4>
+					<img src="./img/opvariables1.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Operazionalización de variables
+					</h4>
+					<img src="./img/opvariables.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Operazionalización de variables
+					</h4>
+					<img src="./img/opvariables3.png" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Variable Independiente
+					</h4>
+					<p>
+						Aplicación Web basado en la Metodología de dinámica de sistemas.
+					</p>
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Variable Independiente
+					</h4>
+					<img src="./img/op2.png" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Variable Independiente
+					</h4>
+					<img src="./img/op4.png" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Variable Independiente
+					</h4>
+					<img src="./img/op5.png" alt="">
+				</section>
+				<section data-background="#dddddd">
+					<h4>
+						Instrumentos
+					</h4>
+					<img src="./img/tablainstrumentos.png" alt="">
+				</section>
+			</section>
+
+			<section data-background="#D1D646">
+				<section>
+					<h4>
+						<h2 data-id="code-title">Propuesta</h2>
+					</h4>
+				</section>
+				<section>
+					<h4>
+						<h2 data-id="code-title">Fase de pruebas</h2>
+					</h4>
+					<img src="./img/resultados.png" alt="">
+				</section>
+				<section>
+					<h4>
+						<h2 data-id="code-title">Fase de pruebas</h2>
+					</h4>
+					<img src="./img/prueba2.png" alt="">
+				</section>
+				<section>
+					<p>
+						El error máximo se encuentra en el satélite vinasat 2 con 20,264 kilómetros y el error mínimo
+						con 0,111 kilómetros en optus 10.
+					</p>
+				</section>
+				<section>
+					<h4>
+						Parametros
+					</h4>
+					<img src="./img/input.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Comparación de resultados con satmaster uplink
+					</h4>
+					<img src="./img/prueba4.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Comparación de resultados con satmaster downlink
+					</h4>
+					<img src="./img/prueba5.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra1.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra2.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra3.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra4.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra5.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra6.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra7.png" alt="">
+				</section>
+				<section>
+					<h4>
+						Validación de usabilidad y velocidad en la creación de enlaces.
+					</h4>
+					<img src="./img/gra8.png" alt="">
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>Conclusiones</h2>
+					<ul>
+						<li>
+							La sistematización de los fundamentos teóricos condensada en el capitulo 2 fue fundamental
+							para la elaboración correcta de la aplicación web.
+						</li>
+						<li>
+							El diagnostico que se realizó al diseño de enlaces satelitales para la Agencia Boliviana
+							Espacial, dio resultados positivos, permitiendo entender los conceptos teóricos acerca de la
+							mecánica orbital y los elementos necesarios para programar correctamente los balances de
+							enlace.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Conclusiones</h2>
+					<ul>
+						<li>
+							Haciendo uso de la metodología de dinámica de sistemas y la metodología de trabajo scrum
+							se diseñaron y desarrollaron los módulos necesarios, para la aplicación web, como ser
+							aplicación del algoritmo propagador de orbita sgp4 en un espacio tridimensional para
+							visualizar la mecánica orbital, desarrollar las interfaces necesarias para la interacción
+							con el usuario final y crear los algoritmos necesarios para el calculo de enlace.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Conclusiones</h2>
+					<ul>
+						<li>
+							Se simularon distintos escenarios y se pudieron validar los resultados tanto del
+							propagador de orbita y los resultados obtenidos en el cálculo de enlace estos se validaron
+							con ayuda de algunas herramientas, como ser satmaster, también se valido la usabilidad del
+							mismo con un grupo de estudiantes dispuestos a realizar la evaluación basándose en un
+							problema concreto del libro “Comunicaciones Satelitales” de Rodolfo Nery Vela.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Recomendaciones</h2>
+					<ul>
+						<li>
+							Se recomienda estudiar y agregar más propagadores de orbitas e incluirlas dentro del
+							modelo 3d, como ser el algoritmo sgp8.
+						</li>
+						<li>
+							Se recomienda estudiar y agregar un modulo que permita la simulación de balance de enlace
+							para satélites en órbita LEO y GEO.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Recomendaciones</h2>
+					<ul>
+						<li>
+							Se recomienda unir el sistema a un sistema externo “API” de predicción meteorológica, para
+							lograr una simulación de condiciones climáticas más adecuadas y tener un modelo más próximo
+							a la realidad.
+						</li>
+						<li>
+							Para un correcto manejo del sistema se recomienda una capacitación para conocer todas sus
+							funcionalidades, o verificar los videos creados más el manual de usuario para su uso
+							correcto.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Fin</h2>
+
+				</section>
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+		});
+
+	</script>
+
+</body>
+
+</html>
